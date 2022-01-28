@@ -1,11 +1,11 @@
 window.onload = function() {
     alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Students**\n\nQuestions?\nemail Professor Chuck Konkol\nc.konkol@rockvalleycollege.edu\n\nRegister @ RockValleyCollege.edu");
     var geturllistvalue = get("list");
-fetch(geturllistvalue)
-.then(res => res.json())
-.then(out =>
-  console.log('Checkout this JSON! ', out))
-.catch(err => throw err);
+var jsonData = jQuery.getJSON(geturllistvalue);
+
+jsonData.then(function(data, textStatus, jqxhr) {
+  alert(jqxhr.responseJSON)
+})
 };
 function get(name){
     var url = window.location.search;

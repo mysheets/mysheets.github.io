@@ -5,6 +5,7 @@ window.onload = function() {
 axios.get(geturllistvalue)
   .then(function (response) {
     console.log(response);
+     document.getElementById("sharebutton").innerHTML = response;
   })
   .catch(function (error) {
     console.log(error);
